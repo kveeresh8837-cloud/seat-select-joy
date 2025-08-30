@@ -1,22 +1,12 @@
-
-import Header from '@/components/layout/Header';
-import Hero from '@/components/home/Hero';
-import FeaturedEvents from '@/components/home/FeaturedEvents';
-import Categories from '@/components/home/Categories';
-import Newsletter from '@/components/home/Newsletter';
-import Footer from '@/components/layout/Footer';
+// Update this page (the content is just a fallback if you fail to update the page)
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <Hero />
-        <FeaturedEvents />
-        <Categories />
-        <Newsletter />
-      </main>
-      <Footer />
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
+        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+      </div>
     </div>
   );
 };

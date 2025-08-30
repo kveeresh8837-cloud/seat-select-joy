@@ -1,9 +1,10 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* EasyTickets Design System */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
@@ -35,27 +36,23 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* EasyTickets Brand Colors */
-    --brand-primary: 263 85% 70%;
-    --brand-secondary: 280 89% 74%;
-    --brand-accent: 45 93% 47%;
-    --brand-gradient-from: 263 85% 70%;
-    --brand-gradient-via: 280 89% 74%;
-    --brand-gradient-to: 299 89% 75%;
-
-    /* Glass effect */
-    --glass: 255 255 255 / 0.1;
   }
 
   .dark {
@@ -86,7 +83,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -95,12 +91,6 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Dark mode adjustments */
-    --brand-primary: 263 85% 65%;
-    --brand-secondary: 280 89% 70%;
-    --brand-accent: 45 93% 52%;
-    --glass: 255 255 255 / 0.05;
   }
 }
 
@@ -108,128 +98,8 @@
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
-  }
-  
-  .hero-title {
-    @apply text-5xl md:text-7xl font-extrabold bg-gradient-brand bg-clip-text text-transparent leading-tight;
-  }
-  
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
-  }
-  
-  .section-subtitle {
-    @apply text-lg text-muted-foreground max-w-2xl;
-  }
-}
-
-@layer components {
-  .glass-card {
-    @apply backdrop-blur-md bg-glass border border-white/20 rounded-xl shadow-2xl;
-  }
-  
-  .gradient-border {
-    @apply relative overflow-hidden rounded-lg;
-  }
-  
-  .gradient-border::before {
-    @apply absolute inset-0 bg-gradient-brand opacity-75 rounded-lg;
-    content: '';
-    padding: 2px;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: xor;
-    -webkit-mask-composite: xor;
-  }
-  
-  .shimmer {
-    @apply relative overflow-hidden;
-  }
-  
-  .shimmer::after {
-    @apply absolute inset-0 bg-shimmer;
-    content: '';
-    animation: shimmer 2s infinite;
-  }
-  
-  .floating-element {
-    @apply animate-float;
-  }
-  
-  .fade-in-section {
-    @apply opacity-0 animate-fade-in;
-  }
-  
-  .btn-hero {
-    @apply inline-flex items-center justify-center whitespace-nowrap rounded-full text-base font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
-    @apply bg-gradient-brand hover:shadow-2xl hover:shadow-brand-primary/25 text-white px-8 py-4;
-    @apply transform hover:scale-105 active:scale-95;
-  }
-  
-  .btn-secondary {
-    @apply inline-flex items-center justify-center whitespace-nowrap rounded-full text-base font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
-    @apply bg-white/10 backdrop-blur-sm border border-white/20 text-foreground px-8 py-4;
-    @apply hover:bg-white/20 transform hover:scale-105 active:scale-95;
-  }
-  
-  .event-card {
-    @apply relative overflow-hidden rounded-xl bg-card border border-border shadow-lg transition-all duration-300;
-    @apply hover:shadow-2xl hover:shadow-brand-primary/10 hover:scale-[1.02] hover:-translate-y-1;
-  }
-  
-  .category-chip {
-    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
-    @apply bg-brand-accent/10 text-brand-accent border border-brand-accent/20;
-    @apply transition-all duration-200 hover:bg-brand-accent/20;
-  }
-  
-  .search-input {
-    @apply flex h-12 w-full rounded-full border border-input bg-white/50 backdrop-blur-sm px-6 py-2 text-sm ring-offset-background;
-    @apply file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
-    @apply disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-brand bg-clip-text text-transparent;
-  }
-  
-  .container-section {
-    @apply container mx-auto px-4 py-16 md:py-24;
-  }
-  
-  .grid-events {
-    @apply grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
-  }
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--brand-primary));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--brand-secondary));
 }
