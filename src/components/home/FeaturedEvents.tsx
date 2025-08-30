@@ -69,7 +69,7 @@ const FeaturedEvents = () => {
         {featuredEvents.map((event, index) => (
           <div
             key={event.id}
-            className="group event-card fade-in-section"
+            className="event-card fade-in-section"
             style={{ animationDelay: `${0.1 * index}s` }}
           >
             {/* Event Image */}
