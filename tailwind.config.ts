@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,19 +61,7 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				// EasyTickets brand colors
-				brand: {
-					primary: 'hsl(var(--brand-primary))',
-					secondary: 'hsl(var(--brand-secondary))',
-					accent: 'hsl(var(--brand-accent))',
-					gradient: {
-						from: 'hsl(var(--brand-gradient-from))',
-						via: 'hsl(var(--brand-gradient-via))',
-						to: 'hsl(var(--brand-gradient-to))'
-					}
-				},
-				glass: 'hsla(var(--glass))'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -97,42 +84,11 @@ export default {
 					to: {
 						height: '0'
 					}
-				},
-				'fade-in': {
-					'0%': { opacity: '0', transform: 'translateY(10px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' }
-				},
-				'fade-in-up': {
-					'0%': { opacity: '0', transform: 'translateY(20px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' }
-				},
-				'pulse-slow': {
-					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.8' }
-				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
-				'shimmer': {
-					'0%': { backgroundPosition: '-200% 0' },
-					'100%': { backgroundPosition: '200% 0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out',
-				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
-				'float': 'float 3s ease-in-out infinite',
-				'shimmer': 'shimmer 2s linear infinite'
-			},
-			backgroundImage: {
-				'gradient-brand': 'linear-gradient(135deg, hsl(var(--brand-gradient-from)), hsl(var(--brand-gradient-via)), hsl(var(--brand-gradient-to)))',
-				'gradient-hero': 'linear-gradient(135deg, hsl(var(--brand-primary)) 0%, hsl(var(--brand-gradient-via)) 50%, hsl(var(--brand-secondary)) 100%)',
-				'gradient-card': 'linear-gradient(145deg, hsla(var(--glass)), transparent)',
-				'shimmer': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)'
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
