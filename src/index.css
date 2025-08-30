@@ -180,7 +180,7 @@
   }
   
   .event-card {
-    @apply group relative overflow-hidden rounded-xl bg-card border border-border shadow-lg transition-all duration-300;
+    @apply relative overflow-hidden rounded-xl bg-card border border-border shadow-lg transition-all duration-300;
     @apply hover:shadow-2xl hover:shadow-brand-primary/10 hover:scale-[1.02] hover:-translate-y-1;
   }
   
